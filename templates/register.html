@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='auth.css') }}"
+    />
+  </head>
+  <body>
+    <main>
+      <form action="/user/register" method="post">
+        <fieldset>
+          <label for="registerName">Name</label>
+          <input type="text" name="name" id="registerName" />
+        </fieldset>
+        <fieldset>
+          <label for="registerEmail">Email</label>
+          <input type="email" name="email" id="registerEmail" />
+        </fieldset>
+        <fieldset>
+          <label for="registerPassword">Password</label>
+          <input type="password" name="password" id="registerPassword" />
+        </fieldset>
+        <fieldset>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

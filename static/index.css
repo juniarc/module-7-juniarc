@@ -1,0 +1,43 @@
+* *::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.button__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+  box-shadow: 2px 8px 16px -5px rgba(0, 0, 0, 0.39);
+  width: 50%;
+  height: 20%;
+
+  border-radius: 8px;
+}
+
+.button {
+  min-width: 20%;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: #37afe1;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.button.login {
+  background-color: #ff9d3d;
+}

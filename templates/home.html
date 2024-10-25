@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Home</h1>
+      <button type="button" onclick="location.href='/logout'">Logout</button>
+    </div>
+    <form action="/home/review" method="post">
+      <fieldset>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" />
+      </fieldset>
+      <fieldset>
+        <label for="rating">Rating</label>
+        <input type="number" name="rating" id="rating" min="1" max="5" />
+      </fieldset>
+      <fieldset>
+        <button type="submit">Add</button>
+      </fieldset>
+    </form>
+    <hr />
+    <div>
+      <h2>All Reviews</h2>
+      <div>
+        {% for review in reviews %}
+        <div>
+          <p><strong>Review: </strong>{{ review.description }}</p>
+          <p><strong>Rating: </strong>{{ review.rating}}</p>
+
+          <div class="button__wrapper">
+            <a href="/home/review/update/{{ review.review_id }}">Edit</a>
+            <form
+              action="/home/review/delete/{{ review.review_id }}"
+              method="post"
+            >
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+          <hr />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

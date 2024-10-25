@@ -1,0 +1,11 @@
+main {
+  width: 100vw;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+fieldset {
+  border: none;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}

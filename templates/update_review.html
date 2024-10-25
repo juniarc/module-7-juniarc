@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Review</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='update.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Update Review</h1>
+    <form action="/home/review/update/{{ review.review_id}}" method="post">
+      <fieldset>
+        <label for="description">Description</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          value="{{ review.description}}"
+        />
+      </fieldset>
+      <fieldset>
+        <label for="rating">Rating</label>
+        <input
+          type="number"
+          name="rating"
+          id="rating"
+          min="1"
+          max="5"
+          value="{{ review.rating }}"
+        />
+      </fieldset>
+      <fieldset>
+        <button type="submit">Update Review</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
